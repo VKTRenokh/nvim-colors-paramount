@@ -211,3 +211,5 @@ vim.cmd("hi link GitGutterChange LineNr")
 vim.cmd("hi link GitGutterChangeDelete LineNr")
 
 s:hightlight("WinSeparator", { bg = "NONE", fg = s.light_black })
+
+s:hightlight("DiagnosticError", { fg = s.orange, bg = "NONE" })
