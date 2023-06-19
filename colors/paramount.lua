@@ -102,8 +102,10 @@ s:hightlight("Statement", { fg = s.norm_subtle })
 vim.cmd("hi! link Conditional Statement")
 vim.cmd("hi! link Repeat Statement")
 vim.cmd("hi! link Label Statement")
-s:hightlight("Keyword", { fg = s.purple })
 vim.cmd("hi! link Exception Statement")
+vim.cmd("hi! link @include Statement")
+
+s:hightlight("Keyword", { fg = s.purple })
 
 s:hightlight("Operator", { fg = s.norm, cterm = "bold", gui = "bold" })
 
