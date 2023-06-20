@@ -1,3 +1,4 @@
+local defaults = require("paramount.defaults")
 local M = {}
 
 function M:highlight(group, style)
@@ -22,7 +23,7 @@ function M:highlight(group, style)
 end
 
 function M.setup(opts)
-	opts = opts or {}
+	opts = opts or defaults
 
 	if vim.g.colors_name then
 		vim.cmd("hi clear")
@@ -62,7 +63,6 @@ function M.setup(opts)
 		yellow = { gui = "#F3E430", cterm = "11" },
 		light_yellow = { gui = "#ffff87", cterm = "228" },
 		dark_yellow = { gui = "#A89C14", cterm = "3" },
-		background = { gui = "NONE", cterm = "69" },
 		gitSigns = {
 			add = { gui = "#266d6a", cterm = "69" },
 			change = { gui = "#536c9e", cterm = "69" },
@@ -96,8 +96,13 @@ function M.setup(opts)
 		s.yellow = s.dark_yellow
 	end
 
+	if opts.transparent then
+		s.bg = { gui = "NONE", cterm = "0" }
+	end
+
 	M:highlight("Cursor", { bg = s.purple, fg = s.norm })
 	M:highlight("Comment", { fg = s.bg_subtle, gui = "italic" })
+	M:highlight("Normal", { bg = s.bg })
 
 	M:highlight("Constant", { fg = s.purple })
 	vim.cmd("hi! link Character Constant")
@@ -110,7 +115,13 @@ function M.setup(opts)
 	vim.cmd("hi! link Identifier Normal")
 	vim.cmd("hi! link Function Identifier")
 
-	M:highlight("Statement", { fg = s.norm_subtle })
+	local statementOpts = { fg = s.norm_subtle }
+
+	if opts.italics then
+		statementOpts.gui = "italics"
+	end
+
+	M:highlight("Statement", statementOpts)
 	vim.cmd("hi! link Conditional Statement")
 	vim.cmd("hi! link Repeat Statement")
 	vim.cmd("hi! link Label Statement")
