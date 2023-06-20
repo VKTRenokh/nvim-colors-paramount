@@ -118,7 +118,7 @@ function M.setup(opts)
 	local statementOpts = { fg = s.norm_subtle }
 
 	if opts.italics then
-		statementOpts.gui = "italics"
+		statementOpts.gui = "italic"
 	end
 
 	M:highlight("Statement", statementOpts)
