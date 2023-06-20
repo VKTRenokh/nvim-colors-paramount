@@ -103,14 +103,14 @@ s:highlight("Identifier", { fg = s.dark_blue })
 vim.cmd("hi! link Identifier Normal")
 vim.cmd("hi! link Function Identifier")
 
-s:highlight("Statement", { fg = s.norm_subtle })
+s:highlight("Statement", { fg = s.norm_subtle, gui = "italic" })
 vim.cmd("hi! link Conditional Statement")
 vim.cmd("hi! link Repeat Statement")
 vim.cmd("hi! link Label Statement")
 vim.cmd("hi! link Exception Statement")
 vim.cmd("hi! link @include Statement")
 
-s:highlight("Keyword", { fg = s.purple })
+s:highlight("Keyword", { fg = s.purple, gui = "italic" })
 
 s:highlight("Operator", { fg = s.norm, cterm = "bold", gui = "bold" })
 
@@ -227,3 +227,5 @@ s:highlight("GitSignsChange", { fg = s.gitSigns.change })
 s:highlight("GitSignsDelete", { fg = s.gitSigns.delete })
 
 s:highlight("TelescopeSelection", { bg = s.white, fg = s.black })
+
+s:highlight("MiniIndentscopeSymbol", { fg = s.light_blue })
