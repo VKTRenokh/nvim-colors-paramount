@@ -115,20 +115,20 @@ function M.setup(opts)
 	vim.cmd("hi! link Identifier Normal")
 	vim.cmd("hi! link Function Identifier")
 
-	local statementOpts = { fg = s.norm_subtle }
-
-	if opts.italics then
-		statementOpts.gui = "italic"
-	end
-
-	M:highlight("Statement", statementOpts)
+	M:highlight("Statement", { fg = s.norm_subtle })
 	vim.cmd("hi! link Conditional Statement")
 	vim.cmd("hi! link Repeat Statement")
 	vim.cmd("hi! link Label Statement")
 	vim.cmd("hi! link Exception Statement")
 	vim.cmd("hi! link @include Statement")
 
-	M:highlight("Keyword", { fg = s.norm_subtle, gui = "italic" })
+	local keywordHighlights = { fg = s.norm_subtle }
+
+	if opts.italics then
+		keywordHighlights.gui = "italic"
+	end
+
+	M:highlight("Keyword", keywordHighlights)
 
 	M:highlight("Operator", { fg = s.norm, cterm = "bold", gui = "bold" })
 
