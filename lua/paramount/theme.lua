@@ -247,6 +247,14 @@ function M.setup(opts)
 	M:highlight("TelescopeSelection", { bg = s.white, fg = s.black })
 
 	M:highlight("MiniIndentscopeSymbol", { fg = s.light_blue })
+
+	local preProcHighlights = { fg = s.purple }
+
+	if opts.italics then
+		preProcHighlights.gui = "italic"
+	end
+
+	M:highlight("@preproc", preProcHighlights)
 end
 
 M.setup()
