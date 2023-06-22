@@ -1,10 +1,10 @@
 # Paramount
 
-A minimal colorscheme for Vim that only puts emphasis on the paramount.
+A minimal colorscheme for Neovim that only puts emphasis on the paramount.
 
 ## Screenshots
 
-*Fira Code* font on light and dark backgrounds, with Ruby code from
+_Fira Code_ font on light and dark backgrounds, with Ruby code from
 [VimColors](vimcolors.com/438/paramount/dark):
 
 ![](screenshots/light.png)
@@ -12,20 +12,18 @@ A minimal colorscheme for Vim that only puts emphasis on the paramount.
 
 ## Installation
 
-Copy the color scheme file to your `~/.vim/colors` directory, or use a plugin
-manager like [Plug][] or [Vundle][] and add `"owickstrom/vim-colors-paramount"`
-as a plugin.
+With lazy.nvim
 
-[vundle]: https://github.com/gmarik/Vundle.vim
-[plug]: https://github.com/junegunn/vim-plug
+```lua
+{
+    "VKTRenokh/nvim-colors-paramount",
+    config = function()
+        require("paramount").setup({})
 
-## Usage
-
+        vim.cmd("colorscheme paramount")
+    end
+}
 ```
-:colorscheme paramount
-```
-
-Supports both `background=light` and `background=dark`.
 
 ## Credits
 
