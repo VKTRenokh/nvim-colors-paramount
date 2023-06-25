@@ -256,7 +256,7 @@ function M.setup(opts)
 
 	M:highlight("@preproc", preProcHighlights)
 
-  M:highlight("YankHighlight", {bg = s.orange})
+	M:highlight("YankHighlight", { bg = s.bg_very_subtle })
 end
 
 M.setup()
