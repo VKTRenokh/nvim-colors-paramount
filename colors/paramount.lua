@@ -1,1 +1,1 @@
-require("paramount").setup()
+
